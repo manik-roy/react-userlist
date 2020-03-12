@@ -1,38 +1,105 @@
-.App {
+body {
+  background-color: #e2e1e0;
+}
+
+.single-user {
+  width: 35%;
+}
+
+.image-area {
+  width: 200px;
+  height: 200px;
+  margin: 55px auto auto;
+}
+
+.image-area img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.single-user {
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.svg-inline--fa {
+  vertical-align: middle;
+}
+
+span.addIcon {
   text-align: center;
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  transition: .3s;
+  border-radius: 50%;
+  line-height: 50px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+span.addIcon:hover {
+  background-color: aliceblue;
+  border-radius: 50%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.socials-area ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+.socials-area ul li {
+  list-style: none;
+}
+.socials-area ul li a{
+    width: 50px;
+    height: 50px;
+    background: red;
+    display: block;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    color: #ffffff;
+}
+
+.facebook {
+  background:linear-gradient(to right, rgb(0, 180, 219), rgb(0, 131, 176)) !important;
+}
+.twitter {
+  background:#1da1f2 !important;
+}
+.linkedin {
+  background:#146eb4!important;
+}
+.github {
+  background:linear-gradient(to right, rgb(255, 65, 108), rgb(255, 75, 43)) !important;
+}
+.fa-envelope {
+  padding-right: 5px;
+  padding-top: 2px;
+}
+h6.card-subtitle.text-muted {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.btn-success {
+  margin-bottom: 25px;
+  width: 35%;
+  background-image: linear-gradient(45deg, #ff4360, #ff4938);
+  border: none;
+  font-size: 20px;
+  text-transform: uppercase;
 }
+p.card-text {
+  padding-bottom: 0;
+  margin-bottom: 5px;
+}
+.btn-success:focus {
+  border: none;
+  border: none;
+  outline: none !important;
+  box-shadow:none;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
