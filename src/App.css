@@ -2,8 +2,22 @@ body {
   background-color: #e2e1e0;
 }
 
+.App {
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #ff48418c;
+    padding: 5px;
+    color: #FFE;
+}
+
 .single-user {
-  width: 35%;
+  width: 45%;
+  float: left;
+  max-width: 415px;
+  margin: 20px !important;
+  position: relative;
 }
 
 .image-area {
@@ -12,10 +26,12 @@ body {
   margin: 55px auto auto;
 }
 
-.image-area img {
+.image-area div {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat
 }
 
 .single-user {
@@ -38,52 +54,62 @@ span.addIcon {
   border-radius: 50%;
   line-height: 50px;
 }
+
 span.addIcon:hover {
   background-color: aliceblue;
   border-radius: 50%;
 }
+
 .socials-area ul {
   display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
+
 .socials-area ul li {
   list-style: none;
 }
-.socials-area ul li a{
-    width: 50px;
-    height: 50px;
-    background: red;
-    display: block;
-    margin: 5px;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
-    color: #ffffff;
+
+.socials-area ul li a {
+  width: 50px;
+  height: 50px;
+  background: red;
+  display: block;
+  margin: 5px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  color: #ffffff;
 }
 
 .facebook {
-  background:linear-gradient(to right, rgb(0, 180, 219), rgb(0, 131, 176)) !important;
+  background: linear-gradient(to right, rgb(0, 180, 219), rgb(0, 131, 176)) !important;
 }
+
 .twitter {
-  background:#1da1f2 !important;
+  background: #1da1f2 !important;
 }
+
 .linkedin {
-  background:#146eb4!important;
+  background: #146eb4!important;
 }
+
 .github {
-  background:linear-gradient(to right, rgb(255, 65, 108), rgb(255, 75, 43)) !important;
+  background: linear-gradient(to right, rgb(255, 65, 108), rgb(255, 75, 43)) !important;
 }
+
 .fa-envelope {
   padding-right: 5px;
   padding-top: 2px;
 }
+
 h6.card-subtitle.text-muted {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .btn-success {
   margin-bottom: 25px;
   width: 35%;
@@ -92,14 +118,157 @@ h6.card-subtitle.text-muted {
   font-size: 20px;
   text-transform: uppercase;
 }
+
 p.card-text {
   padding-bottom: 0;
   margin-bottom: 5px;
 }
+
 .btn-success:focus {
   border: none;
   border: none;
   outline: none !important;
-  box-shadow:none;
+  box-shadow: none;
+}
 
+i.fas.fa-phone-alt {
+  font-size: 15px !important;
+  padding-right: 6px;
+  font-weight: 600;
+}
+
+.totalSalary {
+  max-width: 320px;
+  right: 0;
+  margin-top: 20px;
+  position: fixed;
+}
+
+.user-details {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  top:0;
+  transition: .3s;
+  display: none;
+  left:0;
+  opacity: .9;
+  background-image: linear-gradient(45deg, #EC5299, rgb(75, 140, 237));
+}
+.toggler {
+  display: block;
+  
+}
+.user-details .btn-success {
+  cursor: pointer;
+}
+/* Responsive css */
+
+
+/* Normal desktop :1200px. */
+
+@media (min-width: 1200px) and (max-width: 1500px) {}
+
+/* Normal desktop :992px. */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .single-user {
+    width: 40%;
+  }
+  span.addIcon {
+    top: 10px;
+    right: 15px;
+  }
+  .btn-success {
+   
+    width: 50%;
+}
+}
+
+/* Tablet desktop :768px. */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .single-user {
+    width: 40%;
+  }
+  .image-area div {
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+  }
+  .totalSalary {
+    max-width: 200px;
+  }
+  span.addIcon {
+    top: 5px;
+    right: 10px;
+  }
+  .btn-success {
+    width: 70%;
+  }
+  .card-body {
+    padding-top: 0;
+  }
+  .socials-area ul {
+    flex-wrap: wrap;
+  }
+}
+
+/* small mobile :320px. */
+
+@media (max-width: 767px) {
+  span.addIcon {
+    top: 10px;
+    right: 20px;
+
+}
+  .col-9.friends-area {
+    margin: 0 auto;
+    margin-top: 234px;
+   
+}
+  .single-user {
+    width: 100%;
+    margin: 0 0 20px 0 !important;
+  }
+  .totalSalary {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    max-width: 100%;
+}
+
+  .col-9 {
+    flex: 0 !important;
+    max-width: 100%;
+  }
+}
+
+/* Large Mobile :480px. */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+.totalSalary {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  max-width: 100%;
+}
+    .col-9.friends-area {
+      margin: 0 auto;
+      margin-top: 234px;
+    
+  }
+  .single-user {
+    width: 100%;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .col-9 {
+    flex: 0 !important;
+    max-width: 100%;
+  }
 }

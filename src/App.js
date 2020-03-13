@@ -1,33 +1,47 @@
-import React, {useState, useEffect,} from 'react';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, {useState} from 'react';
+import userData from './data/users'
 import './App.css';
+import UserItem from './components/Users/UserItem';
+import TotalSalary from './components/salaryTotal/TotalSalary';
+import Header from './components/header/Header';
 
 function App() {
+
+
+  const [users, setUsers] = useState(userData);
+  const [friendsTotalSalary, setFriendsTotalSalary] = useState([]);
+  
+  const showDetails = item => {
+    // get index fo click item
+    let index = users.indexOf(item.id)
+    let singleUser = users.find(user => user.id  === item.id)
+    singleUser.isClick = !singleUser.isClick
+    users[index]=singleUser;
+    let updateUser = [...users]
+    setUsers(updateUser)
+  }
+
+  const addSalary = friend =>{
+
+   var isExist = friendsTotalSalary.find(singleFriends => singleFriends.id  === friend.id)
+ 
+   if(!isExist) {
+      const friends = [...friendsTotalSalary, friend]
+      setFriendsTotalSalary(friends)
+   } else {
+    alert('Already Add!')
+   }
+  
+  }
+
   return (
-    <div className="App">
-      <div className="single-user d-block m-auto">
-        <div className="card">
-        <span className="addIcon"><i class="fas fa-plus"></i></span>
-        <div className="image-area">
-        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=500&w=400" class="card-img-top" alt="user"/>
-        </div>
-        <div class="card-body text-center">
-          <h2 class="card-title">Manik Roy</h2>
-          <h6 class="card-subtitle text-muted "> <i class="far fa-envelope"></i>cm.dpi15@gmail.com</h6>
-          <p className="text-muted pt-1"> <i class="fas fa-phone-alt"></i>+8801780849889</p>
-          <p class="card-text p-3 ">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <button className="btn btn-success ">More</button>
-          <div className="socials-area pb-4">
-            <ul>
-              <li><a href="/" className="facebook"> <i className="fab fa-facebook-f"></i> </a></li>
-              <li><a href="/" className="linkedin"> <i className="fab fa-linkedin-in"></i> </a></li>
-              <li><a href="/" className="twitter"> <i className="fab fa-twitter"></i> </a></li>
-              <li><a href="/" className="github"> <i className="fab fa-github"></i> </a></li>
-            </ul>
-          </div>
-        </div>
+    <div>
+    <Header/>
+    <div className="App row">
+      <div className="col-9 friends-area">
+        {users.map(user => <UserItem user={user} addSalary={addSalary} showDetails={showDetails}  key={user.id} /> )}
       </div>
+      <TotalSalary friends={friendsTotalSalary} totalFriends = {users} />
     </div>
     </div>
   );
