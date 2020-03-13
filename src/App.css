@@ -218,6 +218,10 @@ i.fas.fa-phone-alt {
 /* small mobile :320px. */
 
 @media (max-width: 767px) {
+  .btn-success {
+    
+    width: 60%;
+}
   span.addIcon {
     top: 10px;
     right: 20px;
@@ -225,7 +229,7 @@ i.fas.fa-phone-alt {
 }
   .col-9.friends-area {
     margin: 0 auto;
-    margin-top: 234px;
+    margin-top: 300px;
    
 }
   .single-user {
@@ -236,7 +240,7 @@ i.fas.fa-phone-alt {
     position: absolute;
     display: flex;
     justify-content: center;
-    top: 0;
+    top: 55px;
     max-width: 100%;
 }
 
@@ -249,17 +253,21 @@ i.fas.fa-phone-alt {
 /* Large Mobile :480px. */
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  .btn-success {
+    
+    width: 60%;
+}
 
 .totalSalary {
   position: absolute;
   display: flex;
   justify-content: center;
-  top: 0;
+  top: 55px;
   max-width: 100%;
 }
     .col-9.friends-area {
       margin: 0 auto;
-      margin-top: 234px;
+      margin-top: 300px;
     
   }
   .single-user {
